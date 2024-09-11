@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"/>
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="contact-form">
+        <fieldset>
+          <legend>Contacto</legend>
+
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              pattern="[A-Za-z\s]{1,50}"
+            />
+            <small class="error"
+              >El nombre debe contener solo letras y espacios.</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="address">Dirección</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              required
+              pattern=".{5,100}"
+            />
+            <small class="error"
+              >La dirección debe tener entre 5 y 100 caracteres.</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="prefix">Prefijo</label>
+            <select id="prefix" name="prefix" required>
+              <option value="">Seleccione un prefijo</option>
+              <option value="+598">+598 (Uruguay)</option>
+              <option value="+54">+54 (Buenos Aires)</option>
+              <option value="+34">+34 (España)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              pattern="\d{9}"
+            />
+            <small class="error">El teléfono debe tener 9 dígitos.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+            <small class="error">El email no es válido.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+
+          <div class="form-group buttons">
+            <input type="submit" value="Enviar" />
+            <input type="reset" value="Borrar" />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
